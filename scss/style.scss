@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  .main__screen {
+    width: 100vw;
+    height: 65vh;
+    background: red;
+    .background__image {
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
+      .background {
+        position: relative;
+        background: url("../../images/background.jpg");
+        width: 100%;
+        height: 100%;
+        background-repeat: repeat-x;
+      }
+
+      .car {
+        position: absolute;
+        bottom: 90px;
+        left: 0;
+        width: 300px;
+        transition: transform 0.5s linear;
+        z-index: 2;
+        // animation: suspension 10s linear infinite;
+      }
+      .moon {
+        position: absolute;
+        top: 50px;
+        left: 30%;
+        width: 30px;
+        height: 30px;
+        background: #e6e6e6;
+        box-shadow: 0 0 30px 10px #fff, 0 0 60px 10px #f0f, 0 0 70px 10px #0ff;
+        border-radius: 50px;
+      }
+
+      .petrol__pumps {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 128px;
+      }
+
+      .no__fuel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        z-index: 3;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+          font-size: 24px;
+          margin: 10px 0;
+        }
+        .retry {
+          margin: 10px 0;
+          padding: 15px 20px;
+          cursor: pointer;
+        }
+      }
+      .start {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        p {
+          font-size: 24px;
+          margin: 10px 0;
+        }
+        .start__btn {
+          margin: 10px 0;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+      }
+
+      .game__over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        z-index: 3;
+
+        p {
+          font-size: 24px;
+          margin: 10px 0;
+        }
+        .play {
+          margin: 10px 0;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .wrapper_control_result {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 35vh;
+
+    .result__panel {
+      height: 100%;
+      overflow-y: scroll;
+      padding: 20px;
+
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+      ul {
+        margin-top: 20px;
+        li {
+          list-style: none;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .rules {
+      h1 {
+        margin: 10px 0;
+      }
+      ul {
+        li {
+          line-height: 28px;
+          list-style: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes movingbackground {
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes suspension {
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  0% {
+    transform: translateY(-1px);
+  }
+}
